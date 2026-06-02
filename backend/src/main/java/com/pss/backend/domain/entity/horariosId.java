@@ -1,0 +1,15 @@
+package com.pss.backend.domain.entity;
+
+import java.io.Serializable;
+import jakarta.persistence.Embeddable;
+import lombok.Getter;
+import lombok.Setter;
+
+@Embeddable
+@Getter
+@Setter
+public class horariosId implements Serializable {
+
+    private String dia;
+    private Integer id_proveedor;
+}
