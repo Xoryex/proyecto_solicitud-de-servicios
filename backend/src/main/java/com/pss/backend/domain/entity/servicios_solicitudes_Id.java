@@ -9,10 +9,10 @@ import lombok.Setter;
 @Embeddable
 @Getter
 @Setter
-public class servicios_solicitudes_Id implements Serializable
+public class Servicios_Solicitudes_Id implements Serializable
 {
 
-    private Integer id_servicio;
-    private Integer id_solicitud;
+    private Integer idServicio;
+    private Integer idSolicitud;
 
 }

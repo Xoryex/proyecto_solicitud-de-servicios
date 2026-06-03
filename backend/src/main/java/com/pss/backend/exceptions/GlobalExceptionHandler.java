@@ -1,4 +1,4 @@
-package com.pss.backend.exception;
+package com.pss.backend.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;

@@ -3,9 +3,9 @@ package com.pss.backend.domain.dto;
 import java.util.List;
 
 
-public record clienteDto (
-    Integer id_cliente,
-    String documento_cliente,
+public record ClienteDto (
+    Integer idCliente,
+    String documentoCliente,
     String nombre,
     String apellido,
     String pais,
@@ -13,6 +13,6 @@ public record clienteDto (
     String distrito,
     String direccion,
     Short estado,
-    usuarioDto usuario,
-    List<solicitudDto> solicitudes
+    UsuarioDto usuario,
+    List<SolicitudDto> solicitudes
 ){}

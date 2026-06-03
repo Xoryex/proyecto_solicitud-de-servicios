@@ -8,8 +8,8 @@ import lombok.Setter;
 @Embeddable
 @Getter
 @Setter
-public class horariosId implements Serializable {
+public class HorariosId implements Serializable {
 
     private String dia;
-    private Integer id_proveedor;
+    private Integer idProveedor;
 }

@@ -1,14 +1,14 @@
-package com.pss.backend.domain.dto.Mapper;
+package com.pss.backend.domain.dto.mapper;
 
 import org.mapstruct.Mapper;
 
-import com.pss.backend.domain.dto.permisoDto;
-import com.pss.backend.domain.entity.permisosId;
+import com.pss.backend.domain.dto.permiso.PermisoIdDto;
+import com.pss.backend.domain.entity.PermisosId;
 
 @Mapper(componentModel = "spring")
 public interface PermisoIdMapper {
 
-    permisoDto.id toDTO(permisosId permisoId);
+    PermisoIdDto toDTO(PermisosId permisoId);
     
-    permisosId toEntity(permisoDto.id permisoIdDto);
+    PermisosId toEntity(PermisoIdDto permisoIdDto);
 }

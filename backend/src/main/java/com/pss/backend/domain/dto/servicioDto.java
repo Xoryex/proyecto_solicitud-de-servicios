@@ -2,9 +2,9 @@ package com.pss.backend.domain.dto;
 
 import java.util.List;
 
-public record servicioDto (
+public record ServicioDto (
 
-    Integer id_servicio,
+    Integer idServicio,
     String titulo,
     String descripcion,
     String pais,
@@ -13,8 +13,8 @@ public record servicioDto (
     String direccion,
     String img,
     Double precio,
-    tipo_servicioDto tipo_servicio,
-    proveedorDto proveedor,
-    List<servicio_solicitudDto> servicios_solicitudes,
-    List<servicio_metodo_pagoDto> servicios_metodos_pago
+    TipoServicioDto tipoServicio,
+    ProveedorDto proveedor,
+    List<Servicio_SolicitudDto> servicios_solicitudes,
+    List<Servicio_MetodoPagoDto> servicios_MetodosPagos
 ){}

@@ -1,4 +1,4 @@
-package com.pss.backend.service.IService;
+package com.pss.backend.services.IServices;
 
 import java.util.List;
 

@@ -2,8 +2,8 @@ package com.pss.backend.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.pss.backend.domain.entity.metodos_pago;
+import com.pss.backend.domain.entity.MetodosPago;
 
-public interface IMetodo_PagoRepository extends JpaRepository<metodos_pago, Integer> {
+public interface IMetodo_PagoRepository extends JpaRepository<MetodosPago, Integer> {
 
 }

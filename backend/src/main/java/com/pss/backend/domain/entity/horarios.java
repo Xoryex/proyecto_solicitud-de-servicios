@@ -15,21 +15,21 @@ import lombok.Setter;
 @Table(name="horarios")
 @Getter
 @Setter
-public class horarios {
+public class Horarios {
 
     @EmbeddedId
-    private horariosId id;
+    private HorariosId idHorario;
 
-    private LocalTime inicio_mañana;
-    private LocalTime fin_mañana;
-    private LocalTime inicio_tarde;
-    private LocalTime fin_tarde;
+    private LocalTime inicioMañana;
+    private LocalTime finMañana;
+    private LocalTime inicioTarde;
+    private LocalTime finTarde;
     private Boolean activo;
 
     @ManyToOne
-    @MapsId("id_proveedor")
+    @MapsId("idProveedor")
     @JoinColumn(name="id_proveedor")
-    private proveedores proveedor;
+    private Proveedores proveedor;
 
 }
 

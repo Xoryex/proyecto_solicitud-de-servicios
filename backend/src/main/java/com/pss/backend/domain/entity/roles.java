@@ -23,12 +23,11 @@ import lombok.Setter;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class roles {
+public class Roles {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_rol")
-    private Integer id;
+    private Integer idRol;
 
     @Column(nullable = false, unique = true, columnDefinition = "Varchar(255) NOT NULL")
     private String rol;
@@ -42,7 +41,7 @@ public class roles {
     private Boolean activo=true;
 
     @OneToMany(mappedBy = "rol")
-    private List<usuarios> usuarios;
+    private List<Usuarios> usuarios;
 
 
 }   

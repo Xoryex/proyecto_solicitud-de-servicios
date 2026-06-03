@@ -1,10 +1,10 @@
 package com.pss.backend.domain.dto;
 
-public record servicio_solicitudDto (
-    servicio_solicitud_IdDto id,
+public record Servicio_SolicitudDto (
+    Servicio_Solicitud_IdDto idServicioSolicitud,
     Integer cantidad,
     Short estado,
-    servicioDto servicio,
-    solicitudDto solicitud
+    ServicioDto servicio,
+    SolicitudDto solicitud
 ){}
 

@@ -1,4 +1,4 @@
-package com.pss.backend.controller;
+package com.pss.backend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pss.backend.domain.dto.rolDto;
-import com.pss.backend.service.RolService;
+import com.pss.backend.domain.dto.rol.RolCreateDto;
+import com.pss.backend.domain.dto.rol.RolUpdateDto;
+import com.pss.backend.services.RolService;
 
 import jakarta.websocket.server.PathParam;
 
@@ -30,12 +31,12 @@ public class RolController {
     }
 
     @PostMapping()
-    public ResponseEntity<?> saveRol(@RequestBody rolDto.create dto) {
+    public ResponseEntity<?> saveRol(@RequestBody RolCreateDto dto) {
         return ResponseEntity.ok(rolService.save(dto));
     }
     
     @PutMapping("/update")
-    public ResponseEntity<?> updateRol(@RequestBody rolDto.update dto) {
+    public ResponseEntity<?> updateRol(@RequestBody RolUpdateDto dto) {
         return ResponseEntity.ok(rolService.update(dto));
     }
     

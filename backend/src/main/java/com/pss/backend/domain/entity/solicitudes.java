@@ -17,11 +17,11 @@ import lombok.Setter;
 @Table(name = "solicitudes")
 @Getter
 @Setter
-public class solicitudes {
+public class Solicitudes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_solicitud;
+    private Integer idSolicitud;
 
     private Short estado;
     private String comentario;
@@ -29,8 +29,8 @@ public class solicitudes {
 
     @ManyToOne
     @JoinColumn(name="id_cliente")
-    private clientes cliente;
+    private Clientes cliente;
 
     @OneToMany(mappedBy = "solicitud")
-    private List<servicios_solicitudes> servicios_solicitudes;
+    private List<Servicios_Solicitudes> servicios_solicitudes;
 }

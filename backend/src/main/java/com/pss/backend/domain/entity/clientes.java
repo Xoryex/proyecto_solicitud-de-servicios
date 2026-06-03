@@ -18,14 +18,14 @@ import lombok.Setter;
 @Table(name="clientes")
 @Getter
 @Setter
-public class clientes {
+public class Clientes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_cliente;
+    private Integer idCliente;
 
     @Column(unique = true, nullable = false)
-    private String documento_cliente;
+    private String documentoCliente;
     private String nombre;
     private String apellido;
     private String pais;
@@ -36,9 +36,9 @@ public class clientes {
 
     @ManyToOne
     @JoinColumn(name="id_usuario")
-    private usuarios usuario;
+    private Usuarios usuario;
 
     @OneToMany(mappedBy="cliente")
-    private List<solicitudes> solicitudes;
+    private List<Solicitudes> solicitudes;
 
 }

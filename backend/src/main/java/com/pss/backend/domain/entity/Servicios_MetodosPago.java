@@ -13,22 +13,22 @@ import lombok.Setter;
 @Table(name = "servicios_metodos_pago")
 @Getter
 @Setter
-public class servicios_metodos_pago {
+public class Servicios_MetodosPago {
 
     @EmbeddedId
-    private servicios_metodos_pago_Id id;
+    private Servicios_MetodosPago_Id idServicioMetodoPago;
 
     private Boolean activo;
 
     @ManyToOne
-    @MapsId("id_servicio")
+    @MapsId("idServicio")
     @JoinColumn(name ="id_servicio")
-    private servicios servicio;
+    private Servicios servicio;
 
     @ManyToOne
-    @MapsId("id_metodo_pago")
+    @MapsId("idMetodoPago")
     @JoinColumn(name = "id_metodo_pago")
-    private metodos_pago metodo_pago;
+    private MetodosPago metodoPago;
 
 }
 

@@ -22,10 +22,10 @@ import lombok.AllArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class permisos {
+public class Permisos {
 
     @EmbeddedId
-    private permisosId id;
+    private PermisosId idPermiso;
 
     @Builder.Default
     @Column(nullable = false, columnDefinition = "boolean default true NOT NULL")
@@ -34,6 +34,6 @@ public class permisos {
     @ManyToOne
     @MapsId("idRol")
     @JoinColumn(name = "id_rol")
-    private roles rol;
+    private Roles rol;
 
 }

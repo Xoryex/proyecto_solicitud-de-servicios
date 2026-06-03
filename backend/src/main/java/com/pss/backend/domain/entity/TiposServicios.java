@@ -13,20 +13,22 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "metodos_pago")
+@Table(name = "tipos_servicios")
 @Getter
 @Setter
-public class metodos_pago {
+public class TiposServicios {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_metodo_pago;
+    private Integer idTipoServicio;
 
-    @Column(unique=true, nullable=false)
-    private String metodo_pago;
+    @Column(nullable = false, unique = true)
+    private String tipoServicio;
 
-    private String descricion;
+    private String descripcion;
+    private Short estado;
 
-    @OneToMany(mappedBy = "metodo_pago")
-    private List<servicios_metodos_pago> servicios_metodos_pago;
+    @OneToMany(mappedBy = "tipoServicio")
+    private List<Servicios> servicios;
+
 }

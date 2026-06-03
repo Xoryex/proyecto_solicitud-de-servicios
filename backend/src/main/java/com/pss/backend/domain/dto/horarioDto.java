@@ -4,15 +4,15 @@ import java.time.LocalTime;
 
 
 
-public record horarioDto(
-    horarioIdDto id,
+public record HorarioDto(
+    HorarioIdDto idHorario,
 
-    LocalTime inicio_mañana,
-    LocalTime fin_mañana,
-    LocalTime inicio_tarde,
-    LocalTime fin_tarde,
+    LocalTime inicioMañana,
+    LocalTime finMañana,
+    LocalTime inicioTarde,
+    LocalTime finTarde,
     Boolean activo,
 
-    proveedorDto proveedor) {}
+    ProveedorDto proveedor) {}
 
 

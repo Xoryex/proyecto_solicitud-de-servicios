@@ -6,13 +6,13 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.pss.backend.domain.entity.permisos;
-import com.pss.backend.domain.entity.permisosId;
+import com.pss.backend.domain.entity.Permisos;
+import com.pss.backend.domain.entity.PermisosId;
 
 @Repository
-public interface IPermisoRepository extends JpaRepository<permisos, permisosId> {
+public interface IPermisoRepository extends JpaRepository<Permisos, PermisosId> {
 
     
-    Optional<List<permisos>> findByIdModuloOrIdIdRol(String modulo, Integer idRol);
+    Optional<List<Permisos>> findByIdPermiso_ModuloOrIdPermiso_IdRol(String modulo, Integer idRol);
 
 }

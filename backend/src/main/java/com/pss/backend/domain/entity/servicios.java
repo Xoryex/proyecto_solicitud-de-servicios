@@ -18,11 +18,11 @@ import lombok.Setter;
 @Table(name="servicios")
 @Getter
 @Setter
-public class servicios {
+public class Servicios {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_servicio;
+    private Integer idServicio;
 
     @Column(nullable = false)
     private String titulo;
@@ -36,16 +36,16 @@ public class servicios {
 
     @ManyToOne
     @JoinColumn(name="id_tipo_servicio")
-    private tipos_servicios tipo_servicio;
+    private TiposServicios tipoServicio;
 
     @ManyToOne
     @JoinColumn(name="id_proveedor")
-    private proveedores proveedor;
+    private Proveedores proveedor;
 
     @OneToMany(mappedBy = "servicio")
-    private List<servicios_solicitudes> servicios_solicitudes;
+    private List<Servicios_Solicitudes> servicios_solicitudes;
 
     @OneToMany(mappedBy = "servicio")
-    private List<servicios_metodos_pago> servicios_metodos_pago;
+    private List<Servicios_MetodosPago> servicios_metodosPago;
 
 }

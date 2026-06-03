@@ -1,8 +1,9 @@
 package com.pss.backend.domain.dto;
 
 
-public record Servicio_Solicitud_IdDto
+public record Servicio_MetodoPago_IdDto
 (
     Integer idServicio,
-    Integer idSolicitud
+    Integer idMetodoPago
+
 ){}

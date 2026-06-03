@@ -1,7 +1,7 @@
 package com.pss.backend.domain.dto;
 
-public record usuarioDto(
-    Integer id_usuario,
+public record UsuarioDto(
+    Integer idUsuario,
     String usuario,
     String contraseña,
     boolean estado

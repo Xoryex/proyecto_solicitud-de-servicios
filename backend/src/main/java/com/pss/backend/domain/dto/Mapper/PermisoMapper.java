@@ -1,4 +1,4 @@
-package com.pss.backend.domain.dto.Mapper;
+package com.pss.backend.domain.dto.mapper;
 
 import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
@@ -6,21 +6,21 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 
-import com.pss.backend.domain.dto.permisoDto.create;
-import com.pss.backend.domain.dto.permisoDto.response;
-import com.pss.backend.domain.dto.permisoDto.update;
-import com.pss.backend.domain.entity.permisos;
+import com.pss.backend.domain.dto.permiso.PermisoCreateDto;
+import com.pss.backend.domain.dto.permiso.PermisoResponseDto;
+import com.pss.backend.domain.dto.permiso.PermisoUpdateDto;
+import com.pss.backend.domain.entity.Permisos;
 
 @Mapper(componentModel = "spring")
 public interface PermisoMapper {
 
-    response toDTO(permisos permiso);
+    PermisoResponseDto toDTO(Permisos permiso);
 
     @Mapping(target = "rol", ignore = true)
-    permisos toEntity(create permisoDto);
+    Permisos toEntity(PermisoCreateDto permisoDto);
 
-    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "idPermiso", ignore = true)
     @Mapping(target = "rol", ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    void updateEntity(update permisoDto, @MappingTarget permisos permiso);
+    void updateEntity(PermisoUpdateDto permisoDto, @MappingTarget Permisos permiso);
 }

@@ -1,6 +1,6 @@
 package com.pss.backend.enums;
 
-public enum modulo {
+public enum Modulo {
 
     GESTION_USUARIOS,
     GESTION_SERVICIOS,

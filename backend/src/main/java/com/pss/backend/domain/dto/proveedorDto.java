@@ -2,14 +2,14 @@ package com.pss.backend.domain.dto;
 
 import java.util.List;
 
-public record proveedorDto (
-    Integer id_proveedor,
-    String documento_proveedor,
-    String nombre_proveedor,
+public record ProveedorDto (
+    Integer idProveedor,
+    String documentoProveedor,
+    String nombreProveedor,
     String descripcion,
-    Double calificacion_general,
+    Double calificacionGeneral,
     Short estado,
-    usuarioDto usuario,
-    List<horarioDto> horarios,
-    List<servicioDto> servicios
+    UsuarioDto usuario,
+    List<HorarioDto> horarios,
+    List<ServicioDto> servicios
 ){}

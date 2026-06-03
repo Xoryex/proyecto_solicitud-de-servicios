@@ -1,7 +1,7 @@
 package com.pss.backend.domain.dto;
 
-public record horarioIdDto(
+public record HorarioIdDto(
     String dia,
-    Integer id_proveedor) {
+    Integer idProveedor) {
 }
 

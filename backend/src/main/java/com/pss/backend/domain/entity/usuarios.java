@@ -18,11 +18,11 @@ import jakarta.persistence.JoinColumn;
 @Table(name = "usuarios")
 @Getter
 @Setter
-public class usuarios {
+public class Usuarios {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_usuario;
+    private Integer idUsuario;
 
     @Column(nullable = false, unique = true)
     private String usuario;
@@ -33,12 +33,12 @@ public class usuarios {
 
     @ManyToOne
     @JoinColumn(name = "id_rol")
-    private roles rol;
+    private Roles rol;
 
     @OneToMany(mappedBy = "usuario")
-    List<clientes> clientes;
+    List<Clientes> clientes;
 
     @OneToMany(mappedBy = "usuario")
-    List<proveedores> proveedores;
+    List<Proveedores> proveedores;
 
 }
