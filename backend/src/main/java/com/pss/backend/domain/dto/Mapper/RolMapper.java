@@ -4,24 +4,26 @@ import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
+import org.mapstruct.NullValueCheckStrategy;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 
 import com.pss.backend.domain.dto.rol.RolCreateDto;
-import com.pss.backend.domain.dto.rol.RolResponseDto;
-import com.pss.backend.domain.dto.rol.RolUpdateDto;
-import com.pss.backend.domain.entity.Roles;
+import com.pss.backend.domain.dto.rol.RolDto;
+import com.pss.backend.domain.entity.Rol;
 
 @Mapper(componentModel = "spring")
 public interface RolMapper {
 
-    RolResponseDto toDTO(Roles rol);
+    RolDto toDTO(Rol rol);
 
     @Mapping(target = "usuarios", ignore = true)
     @Mapping(target = "idRol", ignore = true)
-    Roles toEntity(RolCreateDto rolCreateDto);
+    @BeanMapping(nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
+    Rol toEntity(RolCreateDto rolCreateDto);
 
     @Mapping(target = "usuarios", ignore = true)
+    @Mapping(target = "idRol", ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    void updateEntity(RolUpdateDto rolUpdateDto, @MappingTarget Roles rol);
+    void updateEntity(RolDto rolDto, @MappingTarget Rol rol);
 
 }

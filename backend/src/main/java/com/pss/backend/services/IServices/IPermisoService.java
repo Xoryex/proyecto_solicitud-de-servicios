@@ -2,12 +2,10 @@ package com.pss.backend.services.IServices;
 
 import java.util.List;
 
-import com.pss.backend.domain.dto.permiso.PermisoCreateDto;
-import com.pss.backend.domain.dto.permiso.PermisoUpdateDto;
-import com.pss.backend.domain.dto.permiso.PermisoResponseDto;
-import com.pss.backend.domain.dto.permiso.PermisoIdDto;
+import com.pss.backend.domain.dto.permiso.PermisoDto;
+import com.pss.backend.domain.dto.permiso.IdPermisoDto;
 
-public interface IPermisoService extends ICRUDService<PermisoCreateDto, PermisoUpdateDto, PermisoResponseDto, PermisoIdDto>{ 
+public interface IPermisoService extends ICRUDService<PermisoDto, PermisoDto, PermisoDto, IdPermisoDto>{ 
     
-    List<PermisoResponseDto> findByModulosOrIdRol(PermisoIdDto id);
+    List<PermisoDto> findByModulosOrIdRol(IdPermisoDto id);
 }

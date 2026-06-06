@@ -2,60 +2,59 @@ package com.pss.backend.services;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pss.backend.domain.dto.mapper.RolMapper;
 import com.pss.backend.domain.dto.rol.RolCreateDto;
-import com.pss.backend.domain.dto.rol.RolUpdateDto;
-import com.pss.backend.domain.dto.rol.RolResponseDto;
-import com.pss.backend.domain.entity.Roles;
+import com.pss.backend.domain.dto.rol.RolDto;
+import com.pss.backend.domain.entity.Rol;
 import com.pss.backend.exceptions.ResourceDuplicate;
 import com.pss.backend.exceptions.ResourceNotFound;
 import com.pss.backend.repository.IRolRepository;
 import com.pss.backend.services.IServices.IRolService;
 
+import lombok.RequiredArgsConstructor;
+
 
 @Service
+@RequiredArgsConstructor
 public class RolService implements IRolService {
 
-    @Autowired
-    private IRolRepository rolRepository;
-    @Autowired
-    private RolMapper rolMapper;
+    private final IRolRepository rolRepository;
+    private final RolMapper rolMapper;
 
     @Override
-    public RolResponseDto save(RolCreateDto dto){
+    public RolDto save(RolCreateDto dto){
         
         if(rolRepository.existsByRol(dto.rol()))
             throw new ResourceDuplicate("El rol ya existe");
 
-        Roles rol = rolMapper.toEntity(dto);
+        Rol rol = rolMapper.toEntity(dto);
         
         return rolMapper.toDTO(rolRepository.save(rol));
     }
     @Override
-    public RolResponseDto findById(Integer id){
+    public RolDto findById(Integer id){
         
-        Roles rol = rolRepository.findById(id).orElseThrow( () -> new ResourceNotFound("Rol no encontrado con id: " + id));
+        Rol rol = rolRepository.findById(id).orElseThrow( () -> new ResourceNotFound("Rol no encontrado con id: " + id));
 
         return rolMapper.toDTO(rol);
     }
     @Override
-    public List<RolResponseDto> findAll(){
+    public List<RolDto> findAll(){
 
-        List<Roles> rolesList = rolRepository.findAll();
+        List<Rol> rolesList = rolRepository.findAll();
 
-        List<RolResponseDto> rolDtos = rolesList.stream()
+        List<RolDto> rolDtos = rolesList.stream()
                 .map(rolMapper::toDTO)
                 .toList();
 
         return rolDtos;
     }
     @Override
-    public RolResponseDto update(RolUpdateDto dto){
+    public RolDto update(RolDto dto){
 
-        Roles rol = rolRepository.findById(dto.idRol()).orElseThrow(() -> new ResourceNotFound("Rol no encontrado"));
+        Rol rol = rolRepository.findById(dto.idRol()).orElseThrow(() -> new ResourceNotFound("Rol no encontrado"));
 
         if(rolRepository.existsByRol(dto.rol()))
             throw new ResourceDuplicate("El rol ya existe");
@@ -71,13 +70,5 @@ public class RolService implements IRolService {
         
         rolRepository.deleteById(id);
     }
-
-    // @Override
-    // public List<rolDto> filter(rolDto dto){
-
-    //     roles rol = rolMapper.toEntity(dto);
-
-
-    // }
 
 }

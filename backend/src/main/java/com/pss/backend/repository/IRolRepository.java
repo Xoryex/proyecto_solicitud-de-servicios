@@ -4,12 +4,14 @@ package com.pss.backend.repository;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import com.pss.backend.domain.entity.Roles;
+import com.pss.backend.domain.entity.Rol;
 
-public interface IRolRepository extends JpaRepository<Roles, Integer> {
+@Repository
+public interface IRolRepository extends JpaRepository<Rol, Integer> {
 
-    Optional<Roles> findByRol(String rol);
+    Optional<Rol> findByRol(String rol);
     boolean existsByRol(String rol);
 
     // @Query(value = "select * from roles as r where r.id_rol like %:#{#rol.id_rol}% or r.rol like %:#{#rol.rol}% or r.descripcion like %:#{#rol.descripcion}% or r.activo like %:#{#rol.activo}%", nativeQuery = true)
